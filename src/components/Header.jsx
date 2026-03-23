@@ -4,12 +4,12 @@ import { QUOTES } from '../utils/constants';
 export default function Header({ theme, toggleTheme, streak }) {
   const quoteIdx = new Date().getDate() % QUOTES.length;
   const currentQuote = QUOTES[quoteIdx];
-  
+
   return (
     <div className="header">
       <div className="header-glow"></div>
       <div className="header-top">
-        <div className="header-tag">🦋 Hashimoto • Profilactic</div>
+        <div className="header-tag">🦋 Profilactic</div>
         <div style={{ display: 'flex', gap: '8px' }}>
           <button className="theme-toggle" onClick={toggleTheme} title="Schimbă tema">
             {theme === 'light' ? '🌙' : '☀️'}
