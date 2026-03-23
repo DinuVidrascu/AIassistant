@@ -1,294 +1,306 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suplimente • Hashimoto</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suplimente • Hashimoto</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Syne:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- CONFETTI CONTAINER -->
-<div class="confetti-container" id="confettiContainer"></div>
+  <!-- CONFETTI CONTAINER -->
+  <div class="confetti-container" id="confettiContainer"></div>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-glow"></div>
-  <div class="header-top">
-    <div class="header-tag">🦋 Hashimoto • Profilactic</div>
-    <div style="display: flex; gap: 8px;">
-      <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Schimbă tema">☀️</button>
-      <div class="streak-badge" onclick="showStreakInfo()">
-        <span style="font-size:1rem">🔥</span>
-        <span class="streak-num" id="streakNum">0</span>
-        <span class="streak-label">zile</span>
-      </div>
-    </div>
-  </div>
-  <h1>Suplimentele<br><em>tale zilnice</em></h1>
-  <div class="quote-box">
-    <p id="quoteText">"Consecvența mică, zilnică, e mai puternică decât perfecțiunea ocazională."</p>
-    <span id="quoteAuthor">— Sfat pentru Hashimoto</span>
-  </div>
-</div>
-
-<!-- PROGRESS -->
-<div class="progress-section">
-  <div class="prog-track">
-    <div class="prog-row">
-      <span id="progLabel">0 din 6 luate azi</span>
-      <strong id="progPct">0%</strong>
-    </div>
-    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
-  </div>
-</div>
-
-<!-- TABS -->
-<div class="tabs">
-  <button class="tab active" onclick="switchTab('azi', this)">📋 Azi</button>
-  <button class="tab" onclick="switchTab('calendar', this)">📊 Calendar</button>
-  <button class="tab" onclick="switchTab('jurnal', this)">😊 Jurnal</button>
-  <button class="tab" onclick="switchTab('ai', this)">✨ Asistent</button>
-</div>
-
-<!-- ═══ TAB: AZI ═══ -->
-<div class="panel active" id="tab-azi">
-
-  <div class="all-done-banner" id="allDoneBanner">
-    <div class="big">🎉</div>
-    <p>Felicitări! Ai luat toate suplimentele azi!</p>
-  </div>
-
-  <!-- 07:00 Pe stomacul gol -->
-  <div class="time-block t1">
-    <div class="time-header">
-      <div class="time-dot"></div>
-      <span class="time-title">Pe stomacul gol</span>
-      <span class="time-clock">07:00</span>
-    </div>
-    <div class="pill-card">
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">🦠</div>
-        <div class="pill-body">
-          <div class="pill-name">LactoBif 5 Probiotice <span class="hashi-pill">Hashimoto</span></div>
-          <div class="pill-sub">1 capsulă • 20-30 min înainte de masă</div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-glow"></div>
+    <div class="header-top">
+      <div class="header-tag">🦋• Profilactic</div>
+      <div style="display: flex; gap: 8px;">
+        <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Schimbă tema">☀️</button>
+        <div class="streak-badge" onclick="showStreakInfo()">
+          <span style="font-size:1rem">🔥</span>
+          <span class="streak-num" id="streakNum">0</span>
+          <span class="streak-label">zile</span>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('probiotic')">i</div>
-        <div class="pill-check">✓</div>
+      </div>
+    </div>
+    <h1>Suplimentele<br><em>tale zilnice</em></h1>
+    <div class="quote-box">
+      <p id="quoteText">"Consecvența mică, zilnică, e mai puternică decât perfecțiunea ocazională."</p>
+      <span id="quoteAuthor">— Sfat pentru Hashimoto</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-section">
+    <div class="prog-track">
+      <div class="prog-row">
+        <span id="progLabel">0 din 6 luate azi</span>
+        <strong id="progPct">0%</strong>
+      </div>
+      <div class="prog-bar">
+        <div class="prog-fill" id="progFill"></div>
       </div>
     </div>
   </div>
 
-  <!-- 08:00 Micul dejun -->
-  <div class="time-block t2">
-    <div class="time-header">
-      <div class="time-dot"></div>
-      <span class="time-title">Micul dejun</span>
-      <span class="time-clock">08:00</span>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('azi', this)">📋 Azi</button>
+    <button class="tab" onclick="switchTab('calendar', this)">📊 Calendar</button>
+    <button class="tab" onclick="switchTab('jurnal', this)">😊 Jurnal</button>
+    <button class="tab" onclick="switchTab('ai', this)">✨ Asistent</button>
+  </div>
+
+  <!-- ═══ TAB: AZI ═══ -->
+  <div class="panel active" id="tab-azi">
+
+    <div class="all-done-banner" id="allDoneBanner">
+      <div class="big">🎉</div>
+      <p>Felicitări! Ai luat toate suplimentele azi!</p>
     </div>
-    <div class="pill-card">
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">🐟</div>
-        <div class="pill-body">
-          <div class="pill-name">Omega-3 Fish Oil <span class="hashi-pill">Hashimoto</span></div>
-          <div class="pill-sub">1 capsulă • cu grăsimi pentru absorbție maximă</div>
+
+    <!-- 07:00 Pe stomacul gol -->
+    <div class="time-block t1">
+      <div class="time-header">
+        <div class="time-dot"></div>
+        <span class="time-title">Pe stomacul gol</span>
+        <span class="time-clock">07:00</span>
+      </div>
+      <div class="pill-card">
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">🦠</div>
+          <div class="pill-body">
+            <div class="pill-name">LactoBif 5 Probiotice <span class="hashi-pill">Hashimoto</span></div>
+            <div class="pill-sub">1 capsulă • 20-30 min înainte de masă</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('probiotic')">i</div>
+          <div class="pill-check">✓</div>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('omega3')">i</div>
-        <div class="pill-check">✓</div>
       </div>
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">⚡</div>
-        <div class="pill-body">
-          <div class="pill-name">B-Complex (Life Extension)</div>
-          <div class="pill-sub">1 capsulă • ⚠️ oprește cu 48h înainte de analize!</div>
+    </div>
+
+    <!-- 08:00 Micul dejun -->
+    <div class="time-block t2">
+      <div class="time-header">
+        <div class="time-dot"></div>
+        <span class="time-title">Micul dejun</span>
+        <span class="time-clock">08:00</span>
+      </div>
+      <div class="pill-card">
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">🐟</div>
+          <div class="pill-body">
+            <div class="pill-name">Omega-3 Fish Oil <span class="hashi-pill">Hashimoto</span></div>
+            <div class="pill-sub">1 capsulă • cu grăsimi pentru absorbție maximă</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('omega3')">i</div>
+          <div class="pill-check">✓</div>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('bcomplex')">i</div>
-        <div class="pill-check">✓</div>
-      </div>
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">☀️</div>
-        <div class="pill-body">
-          <div class="pill-name">Vitamina D3 & K2 (1,000 IU) <span class="hashi-pill">Hashimoto</span></div>
-          <div class="pill-sub">1 capsulă • K2 ghidează calciul spre oase</div>
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">⚡</div>
+          <div class="pill-body">
+            <div class="pill-name">B-Complex (Life Extension)</div>
+            <div class="pill-sub">1 capsulă • ⚠️ oprește cu 48h înainte de analize!</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('bcomplex')">i</div>
+          <div class="pill-check">✓</div>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('d3k2')">i</div>
-        <div class="pill-check">✓</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 19:00 Cina -->
-  <div class="time-block t3">
-    <div class="time-header">
-      <div class="time-dot"></div>
-      <span class="time-title">Cina</span>
-      <span class="time-clock">19:00</span>
-    </div>
-    <div class="pill-card">
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">🪨</div>
-        <div class="pill-body">
-          <div class="pill-name">Magneziu Glicinat (200mg) <span class="hashi-pill">Hashimoto</span></div>
-          <div class="pill-sub">1-2 tablete • relaxare musculară & somn</div>
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">☀️</div>
+          <div class="pill-body">
+            <div class="pill-name">Vitamina D3 & K2 (1,000 IU) <span class="hashi-pill">Hashimoto</span></div>
+            <div class="pill-sub">1 capsulă • K2 ghidează calciul spre oase</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('d3k2')">i</div>
+          <div class="pill-check">✓</div>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('magneziu')">i</div>
-        <div class="pill-check">✓</div>
       </div>
     </div>
-  </div>
 
-  <!-- 22:00 Somn -->
-  <div class="time-block t4">
-    <div class="time-header">
-      <div class="time-dot"></div>
-      <span class="time-title">Înainte de culcare</span>
-      <span class="time-clock">22:00</span>
-    </div>
-    <div class="pill-card">
-      <div class="pill-row" onclick="togglePill(this)">
-        <div class="pill-emoji">🌿</div>
-        <div class="pill-body">
-          <div class="pill-name">Ashwagandha (450mg)</div>
-          <div class="pill-sub">1 capsulă • ⚠️ monitorizează palpitații sau insomnie</div>
+    <!-- 19:00 Cina -->
+    <div class="time-block t3">
+      <div class="time-header">
+        <div class="time-dot"></div>
+        <span class="time-title">Cina</span>
+        <span class="time-clock">19:00</span>
+      </div>
+      <div class="pill-card">
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">🪨</div>
+          <div class="pill-body">
+            <div class="pill-name">Magneziu Glicinat (200mg) <span class="hashi-pill">Hashimoto</span></div>
+            <div class="pill-sub">1-2 tablete • relaxare musculară & somn</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('magneziu')">i</div>
+          <div class="pill-check">✓</div>
         </div>
-        <div class="info-btn" onclick="event.stopPropagation(); openInfo('ashwagandha')">i</div>
-        <div class="pill-check">✓</div>
       </div>
     </div>
-  </div>
 
-</div>
-
-<!-- ═══ TAB: CALENDAR ═══ -->
-<div class="panel" id="tab-calendar">
-
-  <div class="cal-header">
-    <div class="cal-day-label">L</div>
-    <div class="cal-day-label">M</div>
-    <div class="cal-day-label">M</div>
-    <div class="cal-day-label">J</div>
-    <div class="cal-day-label">V</div>
-    <div class="cal-day-label">S</div>
-    <div class="cal-day-label">D</div>
-  </div>
-  <div class="cal-grid" id="calGrid"></div>
-
-  <div class="week-stat">
-    <div class="wstat">
-      <div class="wstat-num" id="wstatDays">0</div>
-      <div class="wstat-label">Zile complete</div>
-    </div>
-    <div class="wstat">
-      <div class="wstat-num" id="wstatStreak">0</div>
-      <div class="wstat-label">Streak actual</div>
-    </div>
-    <div class="wstat">
-      <div class="wstat-num" id="wstatPct">0%</div>
-      <div class="wstat-label">Săptămâna asta</div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ═══ TAB: JURNAL ═══ -->
-<div class="panel" id="tab-jurnal">
-
-  <div class="mood-section">
-    <div class="section-label">Cum te simți azi?</div>
-    <div class="mood-row">
-      <div class="mood-btn" onclick="selectMood(this, '😴')">😴<span>Obosit</span></div>
-      <div class="mood-btn" onclick="selectMood(this, '😕')">😕<span>Rău</span></div>
-      <div class="mood-btn" onclick="selectMood(this, '😐')">😐<span>Normal</span></div>
-      <div class="mood-btn" onclick="selectMood(this, '🙂')">🙂<span>Bine</span></div>
-      <div class="mood-btn" onclick="selectMood(this, '😄')">😄<span>Super</span></div>
-    </div>
-  </div>
-
-  <div class="section-label">Note zilnice</div>
-  <textarea class="journal-input" id="journalInput" placeholder="Cum te-ai simțit azi? Efecte observate, energie, somn..."></textarea>
-  <button class="save-btn" onclick="saveEntry()">Salvează intrarea de azi</button>
-
-  <div class="section-label">Istoric</div>
-  <div class="journal-entries" id="journalEntries"></div>
-
-</div>
-
-<!-- ═══ TAB: AI ASSISTANT ═══ -->
-<div class="panel" id="tab-ai">
-
-  <!-- Verificator Suplimente -->
-  <div class="ai-card">
-    <div class="ai-header">
-      <span>🔍</span>
-      <div>Verifică un supliment</div>
-    </div>
-    <p class="ai-desc">Întreabă inteligența artificială dacă un supliment este recomandat sau periculos în Hashimoto (ex: Iod, Spirulină).</p>
-    <input type="text" id="aiSupplementInput" class="ai-input" placeholder="Introdu numele suplimentului...">
-    <button class="ai-btn" id="aiCheckBtn" onclick="checkSupplementWithAI()">
-      Verifică Siguranța
-      <div class="loader" id="aiCheckLoader"></div>
-    </button>
-    <div id="aiCheckResult" class="ai-result"></div>
-  </div>
-
-  <!-- Generator Retete -->
-  <div class="ai-card">
-    <div class="ai-header">
-      <span>🥗</span>
-      <div>Idee de Masă Sănătoasă</div>
-    </div>
-    <p class="ai-desc">Nu știi ce să mănânci azi? Generează rapid o rețetă delicioasă, simplă și echilibrată nutrițional.</p>
-    <button class="ai-btn ai-recipe-btn" id="aiRecipeBtn" onclick="generateRecipeWithAI()">
-      Generează Rețetă
-      <div class="loader" id="aiRecipeLoader"></div>
-    </button>
-    <div id="aiRecipeResult" class="ai-result recipe-res"></div>
-  </div>
-
-  <!-- Chat Asistent Inteligent -->
-  <div class="ai-card" id="chatCard">
-    <div class="ai-header">
-      <span>💬</span>
-      <div>Chat Asistent Hashimoto</div>
-    </div>
-    <p class="ai-desc">Discută liber cu asistentul tău virtual. Are context și te poate ajuta cu sfaturi personalizate pe loc.</p>
-    
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-message ai-message">
-        Salut! 👋 Sunt asistentul tău pentru sănătatea tiroidei. Cu ce te pot ajuta astăzi?
+    <!-- 22:00 Somn -->
+    <div class="time-block t4">
+      <div class="time-header">
+        <div class="time-dot"></div>
+        <span class="time-title">Înainte de culcare</span>
+        <span class="time-clock">22:00</span>
+      </div>
+      <div class="pill-card">
+        <div class="pill-row" onclick="togglePill(this)">
+          <div class="pill-emoji">🌿</div>
+          <div class="pill-body">
+            <div class="pill-name">Ashwagandha (450mg)</div>
+            <div class="pill-sub">1 capsulă • ⚠️ monitorizează palpitații sau insomnie</div>
+          </div>
+          <div class="info-btn" onclick="event.stopPropagation(); openInfo('ashwagandha')">i</div>
+          <div class="pill-check">✓</div>
+        </div>
       </div>
     </div>
-    
-    <div class="chat-input-area">
-      <input type="text" id="chatInput" class="ai-input" placeholder="Scrie un mesaj aici..." onkeypress="handleChatKeyPress(event)">
-      <button class="ai-btn chat-send-btn" id="chatSendBtn" onclick="sendChatMessage()">
-        Trimite
-        <div class="loader" id="chatLoader"></div>
+
+  </div>
+
+  <!-- ═══ TAB: CALENDAR ═══ -->
+  <div class="panel" id="tab-calendar">
+
+    <div class="cal-header">
+      <div class="cal-day-label">L</div>
+      <div class="cal-day-label">M</div>
+      <div class="cal-day-label">M</div>
+      <div class="cal-day-label">J</div>
+      <div class="cal-day-label">V</div>
+      <div class="cal-day-label">S</div>
+      <div class="cal-day-label">D</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+
+    <div class="week-stat">
+      <div class="wstat">
+        <div class="wstat-num" id="wstatDays">0</div>
+        <div class="wstat-label">Zile complete</div>
+      </div>
+      <div class="wstat">
+        <div class="wstat-num" id="wstatStreak">0</div>
+        <div class="wstat-label">Streak actual</div>
+      </div>
+      <div class="wstat">
+        <div class="wstat-num" id="wstatPct">0%</div>
+        <div class="wstat-label">Săptămâna asta</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ TAB: JURNAL ═══ -->
+  <div class="panel" id="tab-jurnal">
+
+    <div class="mood-section">
+      <div class="section-label">Cum te simți azi?</div>
+      <div class="mood-row">
+        <div class="mood-btn" onclick="selectMood(this, '😴')">😴<span>Obosit</span></div>
+        <div class="mood-btn" onclick="selectMood(this, '😕')">😕<span>Rău</span></div>
+        <div class="mood-btn" onclick="selectMood(this, '😐')">😐<span>Normal</span></div>
+        <div class="mood-btn" onclick="selectMood(this, '🙂')">🙂<span>Bine</span></div>
+        <div class="mood-btn" onclick="selectMood(this, '😄')">😄<span>Super</span></div>
+      </div>
+    </div>
+
+    <div class="section-label">Note zilnice</div>
+    <textarea class="journal-input" id="journalInput"
+      placeholder="Cum te-ai simțit azi? Efecte observate, energie, somn..."></textarea>
+    <button class="save-btn" onclick="saveEntry()">Salvează intrarea de azi</button>
+
+    <div class="section-label">Istoric</div>
+    <div class="journal-entries" id="journalEntries"></div>
+
+  </div>
+
+  <!-- ═══ TAB: AI ASSISTANT ═══ -->
+  <div class="panel" id="tab-ai">
+
+    <!-- Verificator Suplimente -->
+    <div class="ai-card">
+      <div class="ai-header">
+        <span>🔍</span>
+        <div>Verifică un supliment</div>
+      </div>
+      <p class="ai-desc">Întreabă inteligența artificială dacă un supliment este recomandat sau periculos în Hashimoto
+        (ex: Iod, Spirulină).</p>
+      <input type="text" id="aiSupplementInput" class="ai-input" placeholder="Introdu numele suplimentului...">
+      <button class="ai-btn" id="aiCheckBtn" onclick="checkSupplementWithAI()">
+        Verifică Siguranța
+        <div class="loader" id="aiCheckLoader"></div>
       </button>
+      <div id="aiCheckResult" class="ai-result"></div>
+    </div>
+
+    <!-- Generator Retete -->
+    <div class="ai-card">
+      <div class="ai-header">
+        <span>🥗</span>
+        <div>Idee de Masă Sănătoasă</div>
+      </div>
+      <p class="ai-desc">Nu știi ce să mănânci azi? Generează rapid o rețetă delicioasă, simplă și echilibrată
+        nutrițional.</p>
+      <button class="ai-btn ai-recipe-btn" id="aiRecipeBtn" onclick="generateRecipeWithAI()">
+        Generează Rețetă
+        <div class="loader" id="aiRecipeLoader"></div>
+      </button>
+      <div id="aiRecipeResult" class="ai-result recipe-res"></div>
+    </div>
+
+    <!-- Chat Asistent Inteligent -->
+    <div class="ai-card" id="chatCard">
+      <div class="ai-header">
+        <span>💬</span>
+        <div>Chat Asistent Hashimoto</div>
+      </div>
+      <p class="ai-desc">Discută liber cu asistentul tău virtual. Are context și te poate ajuta cu sfaturi personalizate
+        pe loc.</p>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="chat-message ai-message">
+          Salut! 👋 Sunt asistentul tău pentru sănătatea tiroidei. Cu ce te pot ajuta astăzi?
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" class="ai-input" placeholder="Scrie un mesaj aici..."
+          onkeypress="handleChatKeyPress(event)">
+        <button class="ai-btn chat-send-btn" id="chatSendBtn" onclick="sendChatMessage()">
+          Trimite
+          <div class="loader" id="chatLoader"></div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ INFO MODAL ═══ -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal">
+      <div class="modal-handle"></div>
+      <span class="modal-emoji" id="modalEmoji">💊</span>
+      <h3 id="modalTitle">Supliment</h3>
+      <div class="modal-dose" id="modalDose">1 capsulă / zi</div>
+      <p class="modal-body" id="modalBody">Info...</p>
+      <div class="modal-tags" id="modalTags"></div>
+      <button class="modal-close" onclick="closeModalBtn()">Închide</button>
     </div>
   </div>
 
-</div>
-
-<!-- ═══ INFO MODAL ═══ -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal">
-    <div class="modal-handle"></div>
-    <span class="modal-emoji" id="modalEmoji">💊</span>
-    <h3 id="modalTitle">Supliment</h3>
-    <div class="modal-dose" id="modalDose">1 capsulă / zi</div>
-    <p class="modal-body" id="modalBody">Info...</p>
-    <div class="modal-tags" id="modalTags"></div>
-    <button class="modal-close" onclick="closeModalBtn()">Închide</button>
+  <!-- BOTTOM RESET -->
+  <div class="bottom-reset">
+    <button class="reset-btn" onclick="resetDay()">↺ Resetează ziua</button>
   </div>
-</div>
 
-<!-- BOTTOM RESET -->
-<div class="bottom-reset">
-  <button class="reset-btn" onclick="resetDay()">↺ Resetează ziua</button>
-</div>
-
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

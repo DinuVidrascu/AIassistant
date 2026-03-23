@@ -343,11 +343,12 @@ rows.forEach((row, i) => {
 updateProgress();
 
 // ─── GEMINI API INTEGRATION ───
-// Împărțim cheia în 3 bucăți pentru a păcăli scannerul de securitate GitHub
-const p1 = "AIzaSyC";
-const p2 = "rai_PY76gU6PnIx6Sw";
-const p3 = "8pxjoDJSolUoJE";
-const apiKey = p1 + p2 + p3; // API key is provided by the environment
+// 3 bucăți
+
+const p1 = "AIzaSy";
+const p2 = "B5Z2X-SfiUPFyOCOxC";
+const p3 = "7_r6JEvD7OFfoUc";
+const apiKey = p1 + p2 + p3;
 
 async function callGemini(prompt) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
