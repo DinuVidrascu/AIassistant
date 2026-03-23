@@ -27,7 +27,8 @@ export default function TabCalendar({ history, streak }) {
     }
     cells.push(
       <div key={d} className={cls}>
-        {d}
+        <div className="cal-day-num">{d}</div>
+        {hist && hist.kcal > 0 && <div className="cal-kcal-num">{hist.kcal}</div>}
         {hist && <div className="dot"></div>}
       </div>
     );

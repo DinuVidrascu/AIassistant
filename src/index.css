@@ -819,3 +819,21 @@ body.light-theme .user-message { color: white; }
 .all-done-banner.show { display: block; animation: fadeUp 0.4s ease both; }
 .all-done-banner .big { font-size: 2rem; margin-bottom: 6px; }
 .all-done-banner p { font-size: 0.85rem; color: var(--teal); font-weight: 500; }
+
+/* ─── KCAL TAB ─── */
+.kcal-header-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 20px; text-align: center; animation: fadeUp 0.3s ease both; }
+.kcal-numbers { font-family: var(--font-display); font-size: 2.5rem; font-weight: 900; color: var(--teal); line-height: 1; margin-bottom: 8px; }
+.kcal-numbers span { font-size: 1.2rem; color: var(--muted); font-weight: 600; font-family: var(--font-body); }
+.kcal-bar-bg { height: 8px; background: rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
+.kcal-bar-fill { height: 100%; background: linear-gradient(90deg, var(--amber), var(--rose)); width: 0%; transition: width 0.5s ease; border-radius: 10px; }
+.kcal-actions { display: flex; gap: 10px; margin-bottom: 20px; animation: fadeUp 0.4s ease both; }
+.kcal-add-btn { background: var(--teal); color: #0C0F1A; border: none; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; flex: 1; transition: transform 0.2s; }
+.kcal-add-btn:active { transform: scale(0.95); }
+.meal-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.meal-item { background: var(--surface); border: 1px solid var(--border); padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; }
+.meal-name { font-weight: 600; font-size: 0.9rem; }
+.meal-time { font-size: 0.7rem; color: var(--muted); display: block; margin-top: 2px; }
+.meal-cals { font-weight: 700; color: var(--amber); }
+
+/* Added missing calendar kcal text styling */
+.cal-kcal-num { font-size: 0.55rem; color: var(--amber); margin-top: 3px; font-weight: 700; line-height: 1; z-index: 1; }

@@ -8,7 +8,9 @@ export function useAppState() {
     pills: Array(TOTAL).fill(false),
     streak: 0,
     lastDate: null,
-    history: {}
+    history: {},
+    meals: [],
+    kcalGoal: 1800
   });
 
   useEffect(() => {
@@ -49,6 +51,7 @@ export function useAppState() {
           }
           ns.pills = Array(TOTAL).fill(false);
           ns.lastDate = TODAY;
+          ns.meals = [];
         }
         setState(ns);
       } else {
@@ -67,7 +70,23 @@ export function useAppState() {
     setState({ ...state, pills: newPills });
   };
 
-  const resetDay = () => setState({ ...state, pills: Array(TOTAL).fill(false) });
+  const resetDay = () => setState({ ...state, pills: Array(TOTAL).fill(false), meals: [] });
+
+  const addMeal = (name, kcal) => {
+    const time = new Date().toLocaleTimeString('ro-RO', {hour:'2-digit', minute:'2-digit'});
+    const newMeals = [...(state.meals || []), { name, kcal: Number(kcal), time }];
+    
+    const totalKcal = newMeals.reduce((sum, m) => sum + m.kcal, 0);
+    const ns = { ...state, meals: newMeals };
+    if (!ns.history[TODAY]) ns.history[TODAY] = {};
+    ns.history[TODAY].kcal = totalKcal;
+    
+    setState(ns);
+  };
+
+  const setKcalGoal = (goal) => {
+    setState({ ...state, kcalGoal: Number(goal) });
+  };
 
   const saveJournal = (note, mood) => {
     const ns = { ...state };
@@ -78,5 +97,5 @@ export function useAppState() {
     setState(ns);
   };
 
-  return { theme, toggleTheme, state, togglePill, resetDay, saveJournal, TODAY };
+  return { theme, toggleTheme, state, togglePill, resetDay, saveJournal, addMeal, setKcalGoal, TODAY };
 }
